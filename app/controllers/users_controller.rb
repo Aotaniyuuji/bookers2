@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
   def new
-  @user = Book.new
   end
-  
-  
+
+  def create
+  end
+
+  def destroy
+  end
+
+  def show
+  end
+
+  def edit
+  end
 end
