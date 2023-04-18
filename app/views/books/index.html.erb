@@ -1,3 +1,4 @@
+<h1>Books</h1>
 <% @books.each do |book| %>
 <div>
   <%= image_tag book.get_image %>
@@ -7,6 +8,7 @@
   <p><%= book.user.name %></p>
 </div>
 <% end %>
+
 
 <h1>New book</h1>
   <%= form_with model: @book do |f| %>
