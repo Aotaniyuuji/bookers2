@@ -1,3 +1,5 @@
+<%= render 'books/list', book: @book %>
+
 <% @books.each do |book| %>
 <div>
   <%= image_tag book.user.get_profile_image(100,100) %>
@@ -9,5 +11,3 @@
   <p><%= book.user.name %></p>
 </div>
 <% end %>
-
-<%= render 'books/list', book: @book %>
