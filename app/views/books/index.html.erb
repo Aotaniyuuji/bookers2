@@ -8,9 +8,13 @@
 <% end %>
 
 <h1>User info</h1>
-<%= image_tag current_user.get_profile_image(100,100) %>
-<p>name<%= current_user.name %></p>
-<p>introduction<%= current_user.introduction %></p>
+<%= form_with model: @user_info do |f| %>
+  <%= image_tag current_user.get_profile_image(100,100) %>
+  <h4>name</h4>
+    <%= f.name %>
+  <h4>introduction</h4>
+    <%= f.introduction %>
+<% end %>
 
 <h1>Books</h1>
 <% @books.each do |book| %>
