@@ -8,13 +8,13 @@
 <% end %>
 
 <h1>User info</h1>
-<%= form_with model: @user_info do |f| %>
-  <%= image_tag f.get_profile_image(100,100) %>
+  <%= image_tag @user_info.get_profile_image(100,100) %>
   <h4>name</h4>
-    <%= f.name %>
+    <%= @user_info.name %>
+  <%= render "abc" %>
   <h4>introduction</h4>
-    <%= f.introduction %>
-<% end %>
+    <%= @user_info.introduction %>
+
 
 <h1>Books</h1>
 <% @books.each do |book| %>
@@ -29,5 +29,4 @@
 </div>
 <% end %>
 
-<h1>New book</h1>
 <%= render 'list', book: @book %>
