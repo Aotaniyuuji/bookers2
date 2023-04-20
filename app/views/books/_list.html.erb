@@ -1,3 +1,10 @@
+<h1>User info</h1>
+<%= image_tag @user_info.get_profile_image(100,100) %>
+<h4>name</h4>
+  <%= @user_info.name %>
+<h4>introduction</h4>
+  <%= @user_info.introduction %>
+
 <h1>New book</h1>
 
 <%= form_with model: book do |f| %>

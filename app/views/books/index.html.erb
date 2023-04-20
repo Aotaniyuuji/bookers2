@@ -7,14 +7,7 @@
   </ul>
 <% end %>
 
-<h1>User info</h1>
-  <%= image_tag @user_info.get_profile_image(100,100) %>
-  <h4>name</h4>
-    <%= @user_info.name %>
-  <%= render "abc" %>
-  <h4>introduction</h4>
-    <%= @user_info.introduction %>
-
+<%= render 'list', book: @book %>
 
 <h1>Books</h1>
 <% @books.each do |book| %>
@@ -28,5 +21,3 @@
   <p><%= book.user.name %></p>
 </div>
 <% end %>
-
-<%= render 'list', book: @book %>
