@@ -1,3 +1,12 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h1>Books</h1>
 <% @books.each do |book| %>
 <div>
@@ -9,15 +18,6 @@
   <p><%= book.body %></p>
   <p><%= book.user.name %></p>
 </div>
-<% end %>
-
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this obj from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
 <% end %>
 
 <h2>New book</h2>
