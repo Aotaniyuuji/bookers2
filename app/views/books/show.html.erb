@@ -1,9 +1,13 @@
 <h1>Book detail</h1>
 <div>
   <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
-  <p><%= @book.title %></p>
+  <p>
+    <%= link_to "#{@book.user.name}",user_path(@book.user.id) %>
+  </p>
+  <p>
+    <%= link_to "#{@book.title}",book_path %>
+  </p>
   <p><%= @book.body %></p>
-  <p><%= @book.user.name %></p>
   <% if @book.user == current_user %>
     <%= link_to "edit",edit_book_path(@book) %>
     <%= link_to "destroy",book_path(@book), method: :delete %>
