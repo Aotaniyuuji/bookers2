@@ -1,12 +1,21 @@
     <div class="col-md-3">
       <h2>User info</h2>
       <%= image_tag @user_info.get_profile_image(100,100) %>
-      <h4>name</h4>
-        <%= @user_info.name %>
-      <h4>introduction</h4>
-        <%= @user_info.introduction %>
-      <% if @user == current_user %>
-        <%= link_to '編集', edit_user_path(current_user.id) %>
+      <table>
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>name</th>
+            <th><%= @user_info.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @user_info.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block" do %>
+      <i class="fas fa-user-cog"></i>
       <% end %>
 
       <h2>New book</h2>
