@@ -15,15 +15,9 @@
         </tbody>
       </table>
       <div class="row">
-        <% if @user_info.id == current_user.id %>
-          <%= link_to edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block" do %>
+          <%= link_to edit_user_path(@user_info.id), class:"btn btn-outline-secondary btn-block" do %>
           <i class="fas fa-user-cog"></i>
           <% end %>
-        <% else %>
-          <%= link_to user_path(current_user.id), class:"btn btn-outline-secondary btn-block" do %>
-          <i class="fas fa-user-cog"></i>
-          <% end %>
-        <% end %>
       </div>
 
       <h2>New book</h2>
