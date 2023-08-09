@@ -14,9 +14,9 @@
       </tr>
     </tbody>
   </table>
-  <% if user.email != "guest@example.com" %>
+  <% unless @user_info.guest_user? %>
     <div class="row">
-      <%= link_to "" edit_user_path(@user_info.id), class:"btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+      <%= link_to "", edit_user_path(@user_info.id), class:"btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
       <i class="fas fa-user-cog"></i>
       <% end %>
     </div>
